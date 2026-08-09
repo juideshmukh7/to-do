@@ -2,5 +2,9 @@
   {
     "task": "Complete Nodejs Project",
     "completed": true
+  },
+  {
+    "task": "Hackathon prep",
+    "completed": false
   }
 ]
