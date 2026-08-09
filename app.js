@@ -61,6 +61,52 @@ do{
             viewTodos();
             break;
         
-        case '3':    
+        case '3':   
+            viewTodos();
+
+            if(todos.length === 0){
+                console.log('No ToDos to delete.');
+                break;
+            }
+            const num = Number(prompt('Enter the number of the todo to delete: '));
+            
+            if(num<1 || num>todos.length || isNaN(num)){
+                console.log('Invalid number.');
+                break;
+            }
+            todos.splice(num-1,1);
+
+            saveTodos();
+            console.log('Todo deleted successfully.');
+            break;
+        
+        case '4':
+            viewTodos();
+            
+            if(todos.length === 0){
+                console.log('No ToDos to mark as completed.');
+                break;
+            }
+            
+            const num2 = Number(prompt('Enter the number of the todo to mark as completed: '));
+            
+            if(num2<1 || num2>todos.length || isNaN(num2)){
+                console.log('Invalid number.');
+                break;
+            }
+            todos[num2-1].completed = true;
+
+            saveTodos();
+            console.log('Todo marked as completed.');
+            break;
+
+        case '5':
+            console.log('Exiting...');
+            break;
+
+        default:
+            console.log('Invalid choice. Please try again.');
     }
-}
+
+}while (ch !== '5');
+
