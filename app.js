@@ -25,7 +25,7 @@ function viewTodos(){
 
     todos.forEach((todo, index) => {
         const status = todo.completed? '✓':' '; 
-        console.log(`${index+1}.  [${status}] ${todo.task}`);
+        console.log(`${index+1}. [${status}] ${todo.task}`);
     });
 }
 
